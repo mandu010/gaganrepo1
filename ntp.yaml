@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: First task
+      package: name=ntp state=present
+
+    - name: Second task to start NTP Services
+      service: name=ntpd state=started enabled=yes
+...
